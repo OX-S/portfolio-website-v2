@@ -4,6 +4,7 @@ import paycomLogo from "../assets/paycom.png";
 import sevenTrainLogo from "../assets/seventrain.jpg";
 import tigeraaLogo from "../assets/tigeraa.jpg";
 import rwjbLogo from "../assets/rwjbarnabashealth.jpg";
+import tedsenLogo from "../assets/tedsen.png";
 
 // import startupIncLogo from "../assets/startup-inc.png";
 import placeholderLogo from "../assets/placeholder.png"; // Optional
@@ -45,6 +46,16 @@ const jobs = [
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
         // No logo provided for this job
         logo: rwjbLogo, // Optional
+
+    },
+    {
+        title: "Summer Intern",
+        company: "Adolf Tedsen GmbH",
+        duration: "June 2022 - July 2022",
+        description:
+            "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
+        // No logo provided for this job
+        logo: tedsenLogo, // Optional
 
     },
     // Add more job objects as needed
