@@ -27,28 +27,31 @@ function ProfessionalHistory() {
                     {jobs.map((job, index) => (
                         <div
                             key={index}
-                            className="card bg-base-200 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full"
+                            className="collapse collapse-plus border border-base-300 bg-base-200 rounded-lg"
+                            tabIndex={0} // Make the collapse focusable
                         >
-                            {/* Card Body */}
-                            <div className="card-body flex flex-row items-center">
+                            {/* Collapse Title: Header Section */}
+                            <div className="collapse-title flex items-center space-x-4">
                                 {/* Logo Section */}
-                                <div className="flex-shrink-0">
-                                    <img
-                                        src={job.logo || placeholderLogo}
-                                        alt={`${job.company} logo`}
-                                        className="w-16 h-16 object-contain"
-                                    />
-                                </div>
+                                <img
+                                    src={job.logo || placeholderLogo}
+                                    alt={`${job.company} logo`}
+                                    className="w-16 h-16 object-contain"
+                                />
 
                                 {/* Text Section */}
-                                <div className="ml-6">
+                                <div>
                                     <h3 className="text-xl font-semibold">
                                         {job.title} at {job.company}
                                     </h3>
                                     <p className="text-sm text-gray-500">{job.duration}</p>
-                                    <hr className="my-2 border-gray-300" />
-                                    <p className="text-base">{job.description}</p>
                                 </div>
+                            </div>
+
+                            {/* Collapse Content: Description Section */}
+                            <div className="collapse-content">
+                                <hr className="my-2 border-gray-300" />
+                                <p className="text-base">{job.description}</p>
                             </div>
                         </div>
                     ))}
