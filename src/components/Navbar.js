@@ -40,20 +40,20 @@ function Navbar() {
     };
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 px-4">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost normal-case text-xl">
                     {brand}
                 </Link>
-                <div className="hidden lg:flex">
+            </div>
+            <div className="flex items-center space-x-6">
+                <div className="hidden lg:flex space-x-4">
                     {links.map((link, index) => (
                         <Link key={index} to={link.path} className="btn btn-ghost">
                             {link.name}
                         </Link>
                     ))}
                 </div>
-            </div>
-            <div className="flex-none">
                 {/* Theme Toggle using daisyUI's swap component */}
                 <label className="swap swap-rotate">
                     <input

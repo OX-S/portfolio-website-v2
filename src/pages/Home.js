@@ -15,8 +15,9 @@ function Home() {
                     I'm a software developer and entrepreneur working in venture capital on the side.
                 </p>
                 <a
-                    href="../assets/resume.pdf"
-                    download
+                    href={`${process.env.PUBLIC_URL}../assets/resume.pdf`} without rel="noopener noreferrer" // Ensure the path is correct. If using Create React App, place resume.pdf in the public/assets folder.
+                    target="_blank"
+
                     className="btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
                 >
                     Download Resume
