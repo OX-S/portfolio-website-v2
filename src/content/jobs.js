@@ -2,6 +2,8 @@
 
 import paycomLogo from "../assets/paycom.png";
 import sevenTrainLogo from "../assets/seventrain.jpg";
+import tigeraaLogo from "../assets/tigeraa.jpg";
+import rwjbLogo from "../assets/rwjbarnabashealth.jpg";
 
 // import startupIncLogo from "../assets/startup-inc.png";
 import placeholderLogo from "../assets/placeholder.png"; // Optional
@@ -32,14 +34,18 @@ const jobs = [
         description:
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
         // No logo provided for this job
+        logo: tigeraaLogo, // Optional
+
     },
     {
-        title: "Summer Analyst",
-        company: "Tiger Advisory",
-        duration: "May 2024 - Jul 2024",
+        title: "Research Assistant",
+        company: "RWJBarnabas Health",
+        duration: "Feb 2024 - May 2024",
         description:
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
         // No logo provided for this job
+        logo: rwjbLogo, // Optional
+
     },
     // Add more job objects as needed
 ];

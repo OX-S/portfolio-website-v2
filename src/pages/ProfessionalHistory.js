@@ -10,10 +10,10 @@ function ProfessionalHistory() {
         <>
             {/* SEO Enhancements */}
             <Helmet>
-                <title>Professional History - [Your Name]</title>
+                <title>Professional History - Finn Kliewer</title>
                 <meta
                     name="description"
-                    content="Explore the professional journey of [Your Name], including roles as a Software Developer, Entrepreneur, and VC Analyst."
+                    content="Explore the professional journey of Finn Kliewer, including roles as a Software Developer, Entrepreneur, and VC Analyst."
                 />
             </Helmet>
 
