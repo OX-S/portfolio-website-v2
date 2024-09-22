@@ -12,6 +12,7 @@ const Home = () => {
             el: vantaRef.current,
             THREE, // Use the imported THREE
             mouseControls: true,
+            backgroundColor: 0x1f2937,
             touchControls: true,
             gyroControls: false,
             minHeight: 200.00,
