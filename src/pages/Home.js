@@ -1,48 +1,30 @@
 import React, { useEffect, useRef } from 'react';
 import headshot from "../assets/headshot.png";
+import NET from 'vanta/dist/vanta.net.min';
+import * as THREE from '../libs/three.min';
 
 const Home = () => {
     const vantaRef = useRef(null);
 
     useEffect(() => {
-        const loadScript = (src) => {
-            return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
-                script.src = src;
-                script.onload = () => resolve();
-                script.onerror = () => reject();
-                document.body.appendChild(script);
-            });
-        };
+        // Initialize Vanta effect using locally imported THREE
+        const vantaEffect = NET({
+            el: vantaRef.current,
+            THREE, // Use the imported THREE
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            vertexColors: false, // Explicitly set vertexColors to false to avoid the warning
 
-        const initVanta = async () => {
-            try {
-                await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js');
-                await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js');
+        });
 
-                if (window.VANTA) {
-                    window.VANTA.NET({
-                        el: vantaRef.current,
-                        mouseControls: true,
-                        touchControls: true,
-                        gyroControls: false,
-                        minHeight: 200.00,
-                        minWidth: 200.00,
-                        scale: 1.00,
-                        scaleMobile: 1.00,
-                    });
-                }
-            } catch (error) {
-                console.error('Failed to load scripts:', error);
-            }
-        };
-
-        initVanta();
-
+        // Cleanup the Vannta effect when the component is unmounted
         return () => {
-            if (vantaRef.current && window.VANTA) {
-                window.VANTA.NET().destroy(); // Cleanup the Vanta effect when the component is unmounted
-            }
+            if (vantaEffect) vantaEffect.destroy();
         };
     }, []);
 
@@ -60,9 +42,9 @@ const Home = () => {
                         I'm a software developer and entrepreneur working in venture capital on the side.
                     </p>
                     <a
-                        href={`${process.env.PUBLIC_URL}../assets/resume.pdf`} without rel="noopener noreferrer" // Ensure the path is correct. If using Create React App, place resume.pdf in the public/assets folder.
+                        href={`${process.env.PUBLIC_URL}/assets/resume.pdf`} // Ensure the path is correct
                         target="_blank"
-
+                        rel="noopener noreferrer"
                         className="btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
                     >
                         Download Resume
@@ -74,13 +56,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// import React from "react";
-//
-// function Home() {
-//     return (
-
-//     );
-// }
-//
-// export default Home;
