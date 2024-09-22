@@ -27,7 +27,7 @@ function ProfessionalHistory() {
                     {jobs.map((job, index) => (
                         <div
                             key={index}
-                            className="collapse collapse-arrow border border-base-300 bg-base-200 rounded-lg"
+                            className="collapse collapse-arrow bg-base-100 rounded-lg"
                             tabIndex={0} // Make the collapse focusable
                         >
                             {/* Collapse Title: Header Section */}

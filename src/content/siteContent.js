@@ -8,7 +8,7 @@ const siteContent = {
         resumeLink: "/resume.pdf", // Path to resume in the public folder
     },
     navbar: {
-        brand: "My Portfolio",
+        brand: "Finn Kliewer",
         links: [
             { name: "Home", path: "/" },
             { name: "Professional History", path: "/professional-history" },

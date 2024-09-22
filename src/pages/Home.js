@@ -3,7 +3,7 @@ import headshot from "../assets/headshot.png";
 
 function Home() {
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen px-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen px-4 bg-base-200">
             <div className="avatar">
                 <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <img src={headshot} alt="Headshot" />

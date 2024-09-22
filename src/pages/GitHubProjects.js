@@ -18,7 +18,7 @@ function GitHubProjects() {
             <h2 className="text-3xl font-bold mb-6">GitHub Projects</h2>
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {repoProjects.map((project, index) => (
-                    <div key={index} className="card bg-base-200 shadow-xl">
+                    <div key={index} className="card bg-base-100 shadow-xl">
                         <div className="card-body">
                             <h3 className="card-title">{project.name}</h3>
                             <p>{project.description}</p>

@@ -1,7 +1,7 @@
 // src/pages/Contact.js
 
 import React, { useState } from "react";
-import contactInfo from "../content/contactInfo"; // Adjust the path if necessary
+import contactInfo from "../content/contactInfo"; // Ensure the path is correct
 import { Helmet } from "react-helmet";
 
 function Contact() {
@@ -81,9 +81,12 @@ function Contact() {
                     <h2 className="mb-6 text-3xl font-bold text-center">Get in Touch</h2>
 
                     {/* Icons Container */}
-                    <div className="flex flex-row lg:flex-col lg:space-y-6 justify-evenly lg:justify-start w-full">
+                    <div className="flex flex-col lg:flex-col space-y-6">
                         {contactInfo.map((contact) => (
-                            <div key={contact.id} className="flex flex-col items-center lg:items-start">
+                            <div
+                                key={contact.id}
+                                className="flex flex-col items-center lg:items-start"
+                            >
                                 <a
                                     href={contact.href}
                                     className="flex flex-col items-center lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4 hover:text-gray-200 transition-colors duration-300"
@@ -93,7 +96,8 @@ function Contact() {
                                     <div className="w-16 h-16 flex items-center justify-center bg-white text-primary rounded-full shadow-lg hover:bg-blue-400 transform hover:scale-105 transition-all duration-300">
                                         {contact.icon}
                                     </div>
-                                    <span className="text-lg lg:text-left">{contact.text}</span>
+                                    {/* Text is hidden on small screens and visible on large screens */}
+                                    <span className="text-lg hidden lg:block">{contact.text}</span>
                                 </a>
                             </div>
                         ))}

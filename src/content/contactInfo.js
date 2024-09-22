@@ -8,6 +8,7 @@ const contactInfo = [
         href: "mailto:finn.kliewer@gmail.com",
         icon: <FaEnvelope size={24} />,
         label: "Email",
+        title: "Send an Email",
         text: "finn.kliewer@gmail.com",
     },
     {
@@ -15,13 +16,15 @@ const contactInfo = [
         href: "tel:+12017472660",
         icon: <FaPhone size={24} />,
         label: "Phone",
+        title: "Call Me",
         text: "+1 (201) 747-2660",
     },
     {
         id: 3,
-        href: "https://linkedin.com/in/finn-kliewer-82346a227",
+        href: "https://www.linkedin.com/in/finn-kliewer-82346a227/",
         icon: <FaLinkedin size={24} />,
         label: "LinkedIn",
+        title: "LinkedIn Profile",
         text: "LinkedIn",
     },
     {
@@ -29,6 +32,7 @@ const contactInfo = [
         href: "https://github.com/OX-S",
         icon: <FaGithub size={24} />,
         label: "GitHub",
+        title: "GitHub Profile",
         text: "GitHub",
     },
 ];
