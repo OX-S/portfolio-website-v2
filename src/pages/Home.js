@@ -1,33 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import headshot from "../assets/headshot.png";
 import NET from 'vanta/dist/vanta.net.min';
-import * as THREE from '../libs/three.min';
+import useScript from '../hooks/useScript';
+
 
 const Home = () => {
-    const vantaRef = useRef(null);
+    // useScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js');
 
+    const [vantaEffect, setVantaEffect] = useState(null)
+    const vantaRef = useRef(null)
     useEffect(() => {
-        // Initialize Vanta effect using locally imported THREE
-        const vantaEffect = NET({
-            el: vantaRef.current,
-            THREE, // Use the imported THREE
-            mouseControls: true,
-            backgroundColor: 0x1f2937,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            vertexColors: false, // Explicitly set vertexColors to false to avoid the warning
-
-        });
-
-        // Cleanup the Vannta effect when the component is unmounted
+        if (!vantaEffect) {
+            setVantaEffect(NET({
+                el: vantaRef.current,
+                backgroundAlpha: 0
+            }))
+        }
         return () => {
-            if (vantaEffect) vantaEffect.destroy();
-        };
-    }, []);
+            if (vantaEffect) vantaEffect.destroy()
+        }
+    }, [vantaEffect])
+
 
     return (
         <div className="vanta-container" ref={vantaRef} style={{ height: '100vh', width: '100%' }}>
