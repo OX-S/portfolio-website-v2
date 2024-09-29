@@ -1,25 +1,44 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import headshot from "../assets/headshot.png";
 import NET from 'vanta/dist/vanta.net.min';
 import useScript from '../hooks/useScript';
+import {ThemeContext} from "../context/ThemeContext";
 
 
 const Home = () => {
     // useScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js');
-
     const [vantaEffect, setVantaEffect] = useState(null)
     const vantaRef = useRef(null)
+    const { theme } = useContext(ThemeContext);
+
     useEffect(() => {
-        if (!vantaEffect) {
-            setVantaEffect(NET({
+        const backgroundColor = theme === 'light' ? 0xffffff : 0x1f2937;
+        const color = theme === 'light' ? 0x6366f1 : 0x8b5cf6; // Example color based on theme
+
+        const initVanta = () => {
+            return NET({
                 el: vantaRef.current,
-                backgroundAlpha: 0
-            }))
+                backgroundColor: backgroundColor,
+                color: color,
+                points: 12.0,
+                maxDistance: 20.0,
+                spacing: 15.0,
+            });
+        };
+
+        if (!vantaEffect) {
+            const effect = initVanta();
+            setVantaEffect(effect);
+        } else {
+            vantaEffect.destroy();
+            const effect = initVanta();
+            setVantaEffect(effect);
         }
+
         return () => {
-            if (vantaEffect) vantaEffect.destroy()
-        }
-    }, [vantaEffect])
+            if (vantaEffect) vantaEffect.destroy();
+        };
+    }, [theme]);
 
 
     return (

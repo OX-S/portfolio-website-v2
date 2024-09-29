@@ -1,43 +1,15 @@
 // src/components/Navbar.js
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import siteContent from "../content/siteContent"; // Import your site content
+import siteContent from "../content/siteContent";
+import { ThemeContext } from '../context/ThemeContext';
+
 
 function Navbar() {
     const { brand, links } = siteContent.navbar;
-    const [theme, setTheme] = useState("light"); // Initialize theme state
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
-    useEffect(() => {
-        // Check localStorage for saved theme preference
-        const storedTheme = localStorage.getItem("theme");
-        if (storedTheme) {
-            setTheme(storedTheme);
-            const rootTheme = document.getElementById("root-theme");
-            if (rootTheme) {
-                rootTheme.setAttribute("data-theme", storedTheme);
-            }
-        } else {
-            // If no preference, use system preference
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            const initialTheme = prefersDark ? "dark" : "light";
-            setTheme(initialTheme);
-            const rootTheme = document.getElementById("root-theme");
-            if (rootTheme) {
-                rootTheme.setAttribute("data-theme", initialTheme);
-            }
-        }
-    }, []);
-
-    const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-        const rootTheme = document.getElementById("root-theme");
-        if (rootTheme) {
-            rootTheme.setAttribute("data-theme", newTheme);
-        }
-        localStorage.setItem("theme", newTheme); // Save preference to localStorage
-    };
 
     return (
         <div className="navbar bg-base-100 px-4">
