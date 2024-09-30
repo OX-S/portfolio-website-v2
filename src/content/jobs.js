@@ -7,7 +7,7 @@ import rwjbLogo from "../assets/rwjbarnabashealth.jpg";
 import tedsenLogo from "../assets/tedsen.png";
 
 // import startupIncLogo from "../assets/startup-inc.png";
-import placeholderLogo from "../assets/placeholder.png"; // Optional
+// import placeholderLogo from "../assets/placeholder.png"; // Optional
 
 const jobs = [
     {

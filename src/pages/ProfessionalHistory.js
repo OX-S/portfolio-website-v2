@@ -23,11 +23,11 @@ function ProfessionalHistory() {
                 <h2 className="text-3xl font-bold mb-6">Professional History</h2>
 
                 {/* Jobs List */}
-                <div className="space-y-6">
+                <div className="space-y-6 ">
                     {jobs.map((job, index) => (
                         <div
                             key={index}
-                            className="collapse collapse-arrow bg-base-100 rounded-lg"
+                            className="collapse collapse-arrow bg-base-100 rounded-lg shadow-xl"
                             tabIndex={0} // Make the collapse focusable
                         >
                             {/* Collapse Title: Header Section */}
