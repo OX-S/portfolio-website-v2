@@ -1,7 +1,7 @@
 // src/pages/Contact.js
 
 import React, { useState } from "react";
-import contactInfo from "../content/contactInfo"; // Ensure the path is correct
+import contactInfo from "../content/contactInfo";
 import { Helmet } from "react-helmet";
 
 function Contact() {
@@ -39,7 +39,7 @@ function Contact() {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
-            // Handle form submission (e.g., send data to API)
+            // Handle form submission
             console.log("Form Data:", formData);
             setSubmitted(true);
             setFormData({
@@ -56,31 +56,31 @@ function Contact() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-base-200 p-4">
-            {/* Helmet for SEO Optimization */}
+
             <Helmet>
-                <title>Contact Us - Finn Kliewer</title>
+                <title>Contact Me - Finn Kliewer</title>
                 <meta
                     name="description"
-                    content="Get in touch with us through our contact form or reach out via email, phone, LinkedIn, or GitHub."
+                    content="Get in touch with me through my contact form or reach out via email, phone, LinkedIn, or GitHub."
                 />
-                <meta property="og:title" content="Contact Us - Finn Kliewer" />
+                <meta property="og:title" content="Contact Me - Finn Kliewer" />
                 <meta
                     property="og:description"
-                    content="Reach out to us through our contact form or connect with us on LinkedIn and GitHub."
+                    content="Reach out to me through my contact form or connect with me on LinkedIn and GitHub."
                 />
                 <meta property="og:type" content="website" />
-                {/* Add more meta tags as needed */}
+
             </Helmet>
 
-            {/* Large H1 Above the Layout */}
-            <h1 className="text-5xl font-bold text-center mb-8">Contact Us</h1>
+
+            <h1 className="text-5xl font-bold text-center mb-8">Contact Me</h1>
 
             <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-base-100 shadow-md rounded-lg overflow-hidden">
-                {/* Left Side - Contact Icons */}
+                {/* Left Side  */}
                 <div className="lg:w-1/2 bg-primary text-white p-8 flex flex-col justify-center">
                     <h2 className="mb-6 text-3xl font-bold text-center">Get in Touch</h2>
 
-                    {/* Icons Container */}
+                    {/* Icons */}
                     <div className="flex flex-row lg:flex-col justify-center items-center lg:justify-start lg:items-start space-x-4 lg:space-x-0 lg:space-y-6">
                         {contactInfo.map((contact) => (
                             <div
@@ -96,7 +96,7 @@ function Contact() {
                                     <div className="w-16 h-16 flex items-center justify-center bg-white text-primary rounded-full shadow-lg hover:bg-blue-400 transform hover:scale-105 transition-all duration-300">
                                         {contact.icon}
                                     </div>
-                                    {/* Text is hidden on small screens and visible on large screens */}
+                                    {/* Responsive scaling for small screens */}
                                     <span className="text-lg hidden lg:block">{contact.text}</span>
                                 </a>
                             </div>
@@ -105,7 +105,7 @@ function Contact() {
 
                 </div>
 
-                {/* Right Side - Contact Form */}
+                {/* Right Side */}
                 <div className="lg:w-1/2 p-8">
                     <h2 className="mb-6 text-2xl font-bold text-center">Contact Me</h2>
                     {submitted && (

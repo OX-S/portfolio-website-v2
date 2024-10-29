@@ -8,7 +8,7 @@ import placeholderLogo from "../assets/placeholder.png"; // Optional placeholder
 function ProfessionalHistory() {
     return (
         <>
-            {/* SEO Enhancements */}
+
             <Helmet>
                 <title>Professional History - Finn Kliewer</title>
                 <meta
