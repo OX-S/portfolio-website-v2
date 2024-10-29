@@ -3,6 +3,7 @@ import headshot from "../assets/headshot.png";
 import NET from 'vanta/dist/vanta.net.min';
 import useScript from '../hooks/useScript';
 import {ThemeContext} from "../context/ThemeContext";
+import LinkedInBadge from "../components/LinkedInBadge";
 
 
 const Home = () => {
@@ -62,8 +63,12 @@ const Home = () => {
                     >
                         Download Resume
                     </a>
+
                 </div>
+                <LinkedInBadge />
+
             </div>
+
         </div>
     );
 };
