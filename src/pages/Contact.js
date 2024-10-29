@@ -39,7 +39,7 @@ function Contact() {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
-            // Handle form submission
+            //TODO Handle form submission
             console.log("Form Data:", formData);
             setSubmitted(true);
             setFormData({
