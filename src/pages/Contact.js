@@ -81,11 +81,11 @@ function Contact() {
                     <h2 className="mb-6 text-3xl font-bold text-center">Get in Touch</h2>
 
                     {/* Icons Container */}
-                    <div className="flex flex-col lg:flex-col space-y-6">
+                    <div className="flex flex-row lg:flex-col justify-center items-center lg:justify-start lg:items-start space-x-4 lg:space-x-0 lg:space-y-6">
                         {contactInfo.map((contact) => (
                             <div
                                 key={contact.id}
-                                className="flex flex-col items-center lg:items-start"
+                                className="flex items-center justify-center lg:items-start lg:justify-start"
                             >
                                 <a
                                     href={contact.href}
@@ -102,6 +102,7 @@ function Contact() {
                             </div>
                         ))}
                     </div>
+
                 </div>
 
                 {/* Right Side - Contact Form */}
