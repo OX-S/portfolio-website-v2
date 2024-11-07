@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import headshot from "../assets/headshot.png";
+import headshot from "../assets/headshot.webp";
 import NET from 'vanta/dist/vanta.net.min';
 import useScript from '../hooks/useScript';
 import {ThemeContext} from "../context/ThemeContext";

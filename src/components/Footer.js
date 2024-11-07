@@ -68,7 +68,7 @@ function Footer() {
                         className="text-gray-400 hover:text-white transition-colors duration-300"
                         aria-label="GitHub"
                     >
-                        //TODO add back React icons as they load too slow
+                        {/*TODO add back React icons as they load too slow*/}
                         {/*<FaGithub size={20} />*/}
                     </a>
                 </div>
