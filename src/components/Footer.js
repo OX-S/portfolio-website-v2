@@ -1,13 +1,8 @@
 // src/components/Footer.js
 
 import React from "react";
-import {
-    FaInstagram,
-    FaLinkedinIn,
-    FaGithub,
-} from "react-icons/fa";
+
 import siteContent from "../content/siteContent";
-import {FaXTwitter} from "react-icons/fa6"; // Ensure the path is correct
 
 function Footer() {
     return (
@@ -46,7 +41,7 @@ function Footer() {
                         className="text-gray-400 hover:text-white transition-colors duration-300"
                         aria-label="Twitter"
                     >
-                        <FaXTwitter size={20} />
+                        {/*<FaXTwitter size={20} />*/}
                     </a>
                     <a
                         href="https://www.instagram.com/yourprofile"
@@ -55,7 +50,7 @@ function Footer() {
                         className="text-gray-400 hover:text-white transition-colors duration-300"
                         aria-label="Instagram"
                     >
-                        <FaInstagram size={20} />
+                        {/*<FaInstagram size={20} />*/}
                     </a>
                     <a
                         href="https://www.linkedin.com/in/yourprofile"
@@ -64,7 +59,7 @@ function Footer() {
                         className="text-gray-400 hover:text-white transition-colors duration-300"
                         aria-label="LinkedIn"
                     >
-                        <FaLinkedinIn size={20} />
+                        {/*<FaLinkedinIn size={20} />*/}
                     </a>
                     <a
                         href="https://github.com/yourprofile"
@@ -73,7 +68,8 @@ function Footer() {
                         className="text-gray-400 hover:text-white transition-colors duration-300"
                         aria-label="GitHub"
                     >
-                        <FaGithub size={20} />
+                        //TODO add back React icons as they load too slow
+                        {/*<FaGithub size={20} />*/}
                     </a>
                 </div>
 

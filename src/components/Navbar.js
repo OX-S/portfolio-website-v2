@@ -1,6 +1,6 @@
 // src/components/Navbar.js
 
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import siteContent from "../content/siteContent";
 import { ThemeContext } from '../context/ThemeContext';
@@ -9,6 +9,19 @@ import { ThemeContext } from '../context/ThemeContext';
 function Navbar() {
     const { brand, links } = siteContent.navbar;
     const { theme, toggleTheme } = useContext(ThemeContext);
+
+    const prefetch = (link) => {
+        if (link.component && link.component.preload) {
+            link.component.preload()
+                .then(() => {
+                    console.log(`${link.name} component prefetched`);
+                })
+                .catch(err => {
+                    console.error(`Error prefetching ${link.name}:`, err);
+                });
+        }
+    };
+
 
 
     return (
@@ -21,7 +34,12 @@ function Navbar() {
             <div className="flex items-center space-x-6">
                 <div className="hidden lg:flex space-x-4">
                     {links.map((link, index) => (
-                        <Link key={index} to={link.path} className="btn btn-ghost">
+                        <Link
+                            key={index}
+                            to={link.path}
+                            className="btn btn-ghost"
+                            onMouseEnter={() => prefetch(link)}
+                        >
                             {link.name}
                         </Link>
                     ))}

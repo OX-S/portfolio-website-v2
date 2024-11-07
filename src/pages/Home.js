@@ -65,7 +65,6 @@ const Home = () => {
                     </a>
 
                 </div>
-                <LinkedInBadge />
 
             </div>
 
