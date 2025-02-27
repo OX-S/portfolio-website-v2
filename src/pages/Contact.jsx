@@ -142,12 +142,10 @@ function Contact() {
                                 value={formData.email}
                                 onChange={handleChange}
                                 className={`input input-bordered w-full bg-white ${
-                                    // @ts-expect-error TS(2339): Property 'email' does not exist on type '{}'.
                                     errors.email ? "input-error" : ""
                                 }`}
                                 placeholder="you@example.com"
                             />
-                            // @ts-expect-error TS(2339): Property 'email' does not exist on type '{}'.
                             {errors.email && (
                                 <span className="text-red-500 text-sm">{errors.email}</span>
                             )}
@@ -166,7 +164,6 @@ function Contact() {
                                 }`}
                                 placeholder="Subject"
                             />
-                            // @ts-expect-error TS(2339): Property 'subject' does not exist on type '{}'.
                             {errors.subject && (
                                 <span className="text-red-500 text-sm">{errors.subject}</span>
                             )}
@@ -184,7 +181,6 @@ function Contact() {
                                 }`}
                                 placeholder="Your message..."
                             ></textarea>
-                            // @ts-expect-error TS(2339): Property 'message' does not exist on type '{}'.
                             {errors.message && (
                                 <span className="text-red-500 text-sm">{errors.message}</span>
                             )}

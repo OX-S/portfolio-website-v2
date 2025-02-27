@@ -36,7 +36,6 @@ function GitHubProjects() {
                                     rel="noopener noreferrer"
                                     className="hover:underline"
                                 >
-                                    // @ts-expect-error TS(2339): Property 'name' does not exist on type 'never'.
                                     {project.name}
                                 </a>
                             </h3>
