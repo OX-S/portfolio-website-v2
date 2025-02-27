@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import jobs from "../content/jobs"; // Centralized jobs data
 import placeholderLogo from "../assets/placeholder.png";
-import Heading from "../components/Heading"; // Fallback logo
+import ProfessionalHistoryHeading from "../components/ProfessionalHistoryHeading"; // Fallback logo
 
 function ProfessionalHistory() {
     // Sort jobs descending by start date (MM/YYYY format)
@@ -39,9 +39,9 @@ function ProfessionalHistory() {
                 />
             </Helmet>
 
-            <div className="min-h-screen p-4 max-w-[70%] mx-auto">
+            <div className="min-h-screen p-4 max-w-[75%] mx-auto">
                 {/*<h2 className="text-3xl font-bold mb-6">Professional History</h2>*/}
-                <Heading />
+                <ProfessionalHistoryHeading />
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {sortedJobs.map((job, index) => {
                         const isEven = index % 2 === 0;
