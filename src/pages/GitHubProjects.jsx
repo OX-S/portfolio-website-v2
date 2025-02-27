@@ -1,9 +1,8 @@
 // src/pages/GitHubProjects.js
-
 import React, { useEffect, useState } from 'react';
-import gitCode from '../assets/icons/git-code.svg';
-import gitStar from '../assets/icons/git-star.svg';
-import gitFork from '../assets/icons/git-fork.svg';
+import { ReactComponent as GitCode } from "../assets/icons/git-code.svg";
+import { ReactComponent as GitStar } from '../assets/icons/git-star.svg';
+import { ReactComponent as GitFork } from '../assets/icons/git-fork.svg';
 
 function GitHubProjects() {
     const [repoProjects, setRepoProjects] = useState([]);
@@ -37,23 +36,24 @@ function GitHubProjects() {
                                     rel="noopener noreferrer"
                                     className="hover:underline"
                                 >
+                                    // @ts-expect-error TS(2339): Property 'name' does not exist on type 'never'.
                                     {project.name}
                                 </a>
                             </h3>
-                            <p className="flex-grow mt-2 text-gray-700">{project.description}</p>
+                            <p className="flex-grow mt-2 text-gray-500">{project.description}</p>
                             <div className="mt-4 flex items-center justify-between">
                                 <div className="flex space-x-4">
                                     <div className="flex items-center space-x-1">
-                                        <img src={gitStar} alt="Stars" className="h-5 w-5" />
+                                        <GitStar className="h-5 w-5 fill-current" />
                                         <span>{project.stars}</span>
                                     </div>
                                     <div className="flex items-center space-x-1">
-                                        <img src={gitFork} alt="Forks" className="h-5 w-5" />
+                                        <GitFork className="h-5 w-5 fill-current" />
                                         <span>{project.forks}</span>
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-1">
-                                    <img src={gitCode} alt="Language"  className="h-5 w-5 fill-current text-black dark:text-white" />
+                                    <GitCode className="h-5 w-5 fill-current" />
                                     <span>{project.language}</span>
                                 </div>
                             </div>

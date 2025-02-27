@@ -1,5 +1,4 @@
 // src/components/Footer.js
-
 import React from "react";
 
 import siteContent from "../content/siteContent";
@@ -12,7 +11,7 @@ function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     {/* Site Branding */}
                     <div className="mb-6 md:mb-0">
-                        <h2 className="text-2xl font-bold">{siteContent.navbar.brand}</h2>
+                            <h2 className="text-2xl font-bold">{siteContent.navbar.brand}</h2>
                         {/* Optional: Add a logo image instead of text */}
                         {/* <img src="/path-to-logo.png" alt="Logo" className="h-10" /> */}
                     </div>
@@ -20,7 +19,7 @@ function Footer() {
                     {/* Navigation Links */}
                     <div className="flex space-x-6">
                         {siteContent.navbar.links.map((link) => (
-                            <a
+                                    <a
                                 key={link.name}
                                 href={link.path}
                                 className="hover:text-white transition-colors duration-300"

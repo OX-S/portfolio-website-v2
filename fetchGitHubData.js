@@ -1,7 +1,7 @@
 // fetchGitHubData.js
 require('dotenv').config();
-const axios = require('axios');
-const fs = require('fs');
+import axios from 'axios';
+import fs from 'fs';
 
 const repoUrls = [
     'https://github.com/OX-S/react-pictionary-game',
@@ -58,4 +58,4 @@ async function fetchData() {
     console.log('Data saved to repoData.json');
 }
 
-fetchData();
+fetchData().then();

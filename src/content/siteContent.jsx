@@ -14,7 +14,7 @@ const siteContent = {
             {
                 name: "Home",
                 path: "/",
-                component:  lazyWithPreload(() => import(/* webpackPrefetch: true */ '../pages/Home.js')),
+                component:  lazyWithPreload(() => import(/* webpackPrefetch: true */ '../pages/Home')),
             },
             {
                 name: "Professional History",
@@ -24,7 +24,7 @@ const siteContent = {
             {
                 name: "GitHub Projects",
                 path: "/github-projects",
-                component:  lazyWithPreload(() => import(/* webpackPrefetch: true */ '../pages/GitHubProjects.js')),
+                component:  lazyWithPreload(() => import(/* webpackPrefetch: true */ '../pages/GitHubProjects')),
             },
             {
                 name: "Contact",

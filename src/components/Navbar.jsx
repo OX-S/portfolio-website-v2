@@ -16,7 +16,7 @@ function Navbar() {
                 .then(() => {
                     console.log(`${link.name} component prefetched`);
                 })
-                .catch(err => {
+                .catch((err) => {
                     console.error(`Error prefetching ${link.name}:`, err);
                 });
         }

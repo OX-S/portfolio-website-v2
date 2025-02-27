@@ -1,10 +1,10 @@
 // src/pages/ProfessionalHistory.js
-
 import React from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import jobs from "../content/jobs"; // Centralized jobs data
-import placeholderLogo from "../assets/placeholder.png"; // Fallback logo
+import placeholderLogo from "../assets/placeholder.png";
+import Heading from "../components/Heading"; // Fallback logo
 
 function ProfessionalHistory() {
     // Sort jobs descending by start date (MM/YYYY format)
@@ -14,20 +14,20 @@ function ProfessionalHistory() {
         return bYear - aYear || bMonth - aMonth;
     });
 
-    const initialVisibleCount = 3; // adjust as needed
+    const initialVisibleCount = 2; // adjust as needed
 
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: (i) => ({
             opacity: 1,
             scale: 1,
+
             transition: {
                 duration: 0.5,
                 delay: i < initialVisibleCount ? i * 0.2 : (i - initialVisibleCount) * 0.2,
-            },
+            }
         }),
     };
-
 
     return (
         <>
@@ -39,9 +39,9 @@ function ProfessionalHistory() {
                 />
             </Helmet>
 
-            <div className="min-h-screen p-4 max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6">Professional History</h2>
-
+            <div className="min-h-screen p-4 max-w-[70%] mx-auto">
+                {/*<h2 className="text-3xl font-bold mb-6">Professional History</h2>*/}
+                <Heading />
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {sortedJobs.map((job, index) => {
                         const isEven = index % 2 === 0;

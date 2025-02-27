@@ -1,5 +1,4 @@
 // src/content/jobs.js
-
 import paycomLogo from "../assets/paycom.png";
 import sevenTrainLogo from "../assets/seventrain.jpg";
 import tigerAALogo from "../assets/tigeraa.jpg";

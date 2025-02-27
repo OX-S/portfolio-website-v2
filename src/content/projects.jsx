@@ -1,5 +1,4 @@
 // src/content/projects.js
-
 const projects = [
     {
         name: "Project One",

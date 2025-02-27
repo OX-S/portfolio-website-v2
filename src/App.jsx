@@ -6,6 +6,7 @@ import ProfessionalHistory from "./pages/ProfessionalHistory";
 import GitHubProjects from "./pages/GitHubProjects";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import background from "./assets/background.webp"
 
 function App() {
     return (

@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shimmer {
+    0% {
+        background-position: 0 -50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 -50%;
+    }
+}
+
+.animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+    -moz-animation: shimmer 3s linear infinite;
+    -webkit-animation: shimmer 3s linear infinite;
+
+}
