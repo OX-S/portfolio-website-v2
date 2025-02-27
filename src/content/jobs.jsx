@@ -9,8 +9,8 @@ const jobs = [
     {
         title: "Software Developer II (English/German)",
         company: "Paycom",
-        duration: "Sept 2024 - Present",
-        startDate: "09/2024",
+        duration: "Aug 2024 - Present",
+        startDate: "08/2024",
         endDate: "",
         description:
             "Worked on developing scalable web applications, collaborating with cross-functional teams to deliver high-quality software solutions.",
