@@ -1,6 +1,5 @@
 // src/components/Navbar.js
-
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import siteContent from "../content/siteContent";
 import { ThemeContext } from '../context/ThemeContext';
