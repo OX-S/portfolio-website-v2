@@ -29,7 +29,6 @@ function Navbar() {
                 <span className="text-lg font-semibold">{brand}</span>
 
             </div>
-            {/* Centered Navigation Items */}
             <div className="flex flex-1 justify-center items-center">
                 <div className="hidden lg:flex space-x-4">
                     {links.map((link, index) => (
