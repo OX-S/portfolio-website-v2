@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import contactInfo from "../content/contactInfo";
 import { Helmet } from "react-helmet";
+import ContactHeading from "../components/ContactHeading";
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -73,7 +74,7 @@ function Contact() {
             </Helmet>
 
 
-            <h1 className="text-5xl font-bold text-center mb-8">Contact Me</h1>
+            <ContactHeading />
 
             <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-base-100 shadow-md rounded-lg overflow-hidden">
                 {/* Left Side  */}
