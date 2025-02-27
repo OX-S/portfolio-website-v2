@@ -14,6 +14,21 @@ function ProfessionalHistory() {
         return bYear - aYear || bMonth - aMonth;
     });
 
+    const initialVisibleCount = 3; // adjust as needed
+
+    const cardVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: (i) => ({
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.5,
+                delay: i < initialVisibleCount ? i * 0.2 : (i - initialVisibleCount) * 0.2,
+            },
+        }),
+    };
+
+
     return (
         <>
             <Helmet>
@@ -38,10 +53,11 @@ function ProfessionalHistory() {
                             <motion.li
                                 key={index}
                                 className={!isEven ? "timeline-inverted" : ""}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                custom={index}
+                                initial="hidden"
+                                whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
-                                transition={{ duration: 0.5, delay: index * 0.2 }}
+                                variants={cardVariants}
                             >
                                 <div className="timeline-middle">
                                     {/* Square container with a border */}

@@ -2,12 +2,9 @@
 
 import paycomLogo from "../assets/paycom.png";
 import sevenTrainLogo from "../assets/seventrain.jpg";
-import tigeraaLogo from "../assets/tigeraa.jpg";
-import rwjbLogo from "../assets/rwjbarnabashealth.jpg";
+import tigerAALogo from "../assets/tigeraa.jpg";
+import RJWBLogo from "../assets/rwjbarnabashealth.jpg";
 import tedsenLogo from "../assets/tedsen.png";
-
-// import startupIncLogo from "../assets/startup-inc.png";
-// import placeholderLogo from "../assets/placeholder.png"; // Optional
 
 const jobs = [
     {
@@ -18,7 +15,7 @@ const jobs = [
         endDate: "",
         description:
             "Worked on developing scalable web applications, collaborating with cross-functional teams to deliver high-quality software solutions.",
-        logo: paycomLogo, // Optional
+        logo: paycomLogo,
     },
     {
         title: "Venture Developer",
@@ -28,9 +25,7 @@ const jobs = [
         endDate: "",
         description:
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
-        // No logo provided for this job
-        logo: sevenTrainLogo, // Optional
-
+        logo: sevenTrainLogo,
     },
     {
         title: "Summer Analyst",
@@ -40,9 +35,7 @@ const jobs = [
         endDate: "07/2024",
         description:
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
-        // No logo provided for this job
-        logo: tigeraaLogo, // Optional
-
+        logo: tigerAALogo,
     },
     {
         title: "Research Assistant",
@@ -52,9 +45,7 @@ const jobs = [
         endDate: "07/2024",
         description:
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
-        // No logo provided for this job
-        logo: rwjbLogo, // Optional
-
+        logo: RJWBLogo,
     },
     {
         title: "Summer Intern",
@@ -64,11 +55,8 @@ const jobs = [
         endDate: "07/2022",
         description:
             "Analyzed startup opportunities, conducted due diligence, and assisted in investment decisions to support emerging businesses in the technology space.",
-        // No logo provided for this job
-        logo: tedsenLogo, // Optional
-
+        logo: tedsenLogo,
     },
-    // Add more job objects as needed
 ];
 
 export default jobs;
