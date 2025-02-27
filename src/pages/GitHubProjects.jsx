@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ReactComponent as GitCode } from "../assets/icons/git-code.svg";
 import { ReactComponent as GitStar } from '../assets/icons/git-star.svg';
 import { ReactComponent as GitFork } from '../assets/icons/git-fork.svg';
+import GitHubProjectsHeading from "../components/GitHubProjectsHeading";
 
 function GitHubProjects() {
     const [repoProjects, setRepoProjects] = useState([]);
@@ -20,8 +21,8 @@ function GitHubProjects() {
     }, []);
 
     return (
-        <div className="min-h-screen p-4 max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">GitHub Projects</h2>
+        <div className="min-h-screen p-4 max-w-[75%] mx-auto">
+            <GitHubProjectsHeading />
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {repoProjects.map((project, index) => (
                     <div
