@@ -13,8 +13,8 @@ const Home = () => {
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
-        const backgroundColor = theme === 'light' ? 0xffffff : 0x1f2937;
-        const color = theme === 'light' ? 0x6366f1 : 0x8b5cf6; // Example color based on theme
+        const backgroundColor = theme === 'light' ? 0xe8e8e8 : 0x1f2937;
+        const color = theme === 'light' ? 0x6366f1 : 0x8b5cf6;
 
         const initVanta = () => {
             return NET({
