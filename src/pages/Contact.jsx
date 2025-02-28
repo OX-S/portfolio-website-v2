@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import contactInfo from "../content/contactInfo";
 import { Helmet } from "react-helmet";
-import ContactHeading from "../components/ContactHeading";
+import ContactHeading from "../components/headers/ContactHeading";
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -77,11 +77,9 @@ function Contact() {
             <ContactHeading />
 
             <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-base-100 shadow-md rounded-lg overflow-hidden">
-                {/* Left Side  */}
                 <div className="lg:w-1/2 bg-primary text-white p-8 flex flex-col justify-center">
                     <h2 className="mb-6 text-3xl font-bold text-center">Get in Touch</h2>
 
-                    {/* Icons */}
                     <div className="flex flex-row lg:flex-col justify-center items-center lg:justify-start lg:items-start space-x-4 lg:space-x-0 lg:space-y-6">
                         {contactInfo.map((contact) => (
                             <div
@@ -97,7 +95,6 @@ function Contact() {
                                     <div className="w-16 h-16 flex items-center justify-center bg-white text-primary rounded-full shadow-lg hover:bg-blue-400 transform hover:scale-105 transition-all duration-300">
                                         {contact.icon}
                                     </div>
-                                    {/* Responsive scaling for small screens */}
                                     <span className="text-lg hidden lg:block">{contact.text}</span>
                                 </a>
                             </div>
@@ -106,12 +103,11 @@ function Contact() {
 
                 </div>
 
-                {/* Right Side */}
                 <div className="lg:w-1/2 p-8">
                     <h2 className="mb-6 text-2xl font-bold text-center">Contact Me</h2>
                     {submitted && (
                         <div className="mb-4 text-green-600 text-center">
-                            Thank you for your message! We'll get back to you soon.
+                            Thank you for your message! I'll get back to you soon.
                         </div>
                     )}
                     <form onSubmit={handleSubmit} noValidate>

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import jobs from "../content/jobs"; // Centralized jobs data
 import placeholderLogo from "../assets/placeholder.png";
-import ProfessionalHistoryHeading from "../components/ProfessionalHistoryHeading"; // Fallback logo
+import ProfessionalHistoryHeading from "../components/headers/ProfessionalHistoryHeading"; // Fallback logo
 
 function ProfessionalHistory() {
     // Sort jobs descending by start date (MM/YYYY format)
