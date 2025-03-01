@@ -76,7 +76,7 @@ function Contact() {
 
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-base-200 p-4">
+        <div className="flex flex-col items-center justify-center min-h-screen p-4">
 
             <Helmet>
                 <title>Contact Me - Finn Kliewer</title>
@@ -108,6 +108,16 @@ function Contact() {
                             >
                                 <a
                                     href={contact.href}
+                                    target={
+                                        contact.label === "LinkedIn" || contact.label === "GitHub"
+                                            ? "_blank"
+                                            : "_self"
+                                    }
+                                    rel={
+                                        contact.label === "LinkedIn" || contact.label === "GitHub"
+                                            ? "noopener noreferrer"
+                                            : undefined
+                                    }
                                     className="flex flex-col items-center lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4 hover:text-gray-200 transition-colors duration-300"
                                     aria-label={contact.label}
                                     title={contact.title}
@@ -140,7 +150,7 @@ function Contact() {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className={`input input-bordered w-full bg-white ${
+                                className={`input input-bordered w-full bg-white text-black ${
                                     errors.name ? "input-error" : ""
                                 }`}
                                 placeholder="Your Name"
@@ -158,7 +168,7 @@ function Contact() {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className={`input input-bordered w-full bg-white ${
+                                className={`input input-bordered w-full bg-white text-black ${
                                     errors.email ? "input-error" : ""
                                 }`}
                                 placeholder="you@example.com"
@@ -176,7 +186,7 @@ function Contact() {
                                 name="subject"
                                 value={formData.subject}
                                 onChange={handleChange}
-                                className={`input input-bordered w-full bg-white ${
+                                className={`input input-bordered w-full bg-white text-black ${
                                     errors.subject ? "input-error" : ""
                                 }`}
                                 placeholder="Subject"
@@ -193,7 +203,7 @@ function Contact() {
                                 name="message"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className={`textarea textarea-bordered w-full h-32 bg-white ${
+                                className={`textarea textarea-bordered w-full h-32 bg-white text-black ${
                                     errors.message ? "textarea-error" : ""
                                 }`}
                                 placeholder="Your message..."
