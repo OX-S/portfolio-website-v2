@@ -36,24 +36,44 @@ function Contact() {
         return newErrors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
-            //TODO Handle form submission
-            console.log("Form Data:", formData);
-            setSubmitted(true);
-            setFormData({
-                name: "",
-                email: "",
-                subject: "",
-                message: "",
-            });
-            setErrors({});
+            try {
+                const webhook_payload = {
+                    content: `**New Contact Form Submission**\n**Name:** ${formData.name}\n**Email:** ${formData.email}\n**Subject:** ${formData.subject}\n**Message:** ${formData.message}`
+                };
+
+                const response = await fetch(process.env.REACT_APP_WEBHOOK_LINK, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(webhook_payload),
+                });
+                if (response.ok) {
+                    console.log("Form Data:", formData);
+                    setSubmitted(true);
+                    setFormData({
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: "",
+                    });
+                    setErrors({});
+                } else {
+                    console.error("Failed to submit form");
+                }
+            } catch (error) {
+                console.error("Error submitting form", error);
+            }
         } else {
             setErrors(validationErrors);
         }
     };
+
+
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-base-200 p-4">
