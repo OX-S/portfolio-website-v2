@@ -33,26 +33,37 @@ async function fetchData() {
         try {
             const { owner, repo } = parseRepoUrl(url);
 
-            const response = await axios.get(`https://api.github.com/repos/${owner}/${repo}`, {
+            const repoResponse = await axios.get(`https://api.github.com/repos/${owner}/${repo}`, {
                 headers,
             });
+            const repoData = repoResponse.data;
 
-            const data = response.data;
+            const languagesResponse = await axios.get(
+                `https://api.github.com/repos/${owner}/${repo}/languages`,
+                { headers }
+            );
+
+            const languages = languagesResponse.data;
+            const totalBytes = Object.values(languages).reduce((sum, bytes) => sum + bytes, 0);
 
             repoDataList.push({
-                name: data.name,
-                description: data.description,
-                stars: data.stargazers_count,
-                forks: data.forks_count,
-                language: data.language,
-                url: data.html_url,
-                updated_at: data.updated_at,
-                created_at: data.created_at,
-                size: data.size,
-                open_issues: data.open_issues_count
+                name: repoData.name,
+                description: repoData.description,
+                stars: repoData.stargazers_count,
+                forks: repoData.forks_count,
+                languages: {
+                    data: languages,
+                    total_bytes: totalBytes
+                },
+                primary_language: repoData.language,
+                url: repoData.html_url,
+                updated_at: repoData.updated_at,
+                created_at: repoData.created_at,
+                size: repoData.size,
+                open_issues: repoData.open_issues_count
             });
 
-            console.log(`Fetched data for ${owner}/${repo}`);
+            console.log(`Fetched ${Object.keys(languages).length} languages for ${owner}/${repo}`);
         } catch (error) {
             console.error(`Error fetching data for ${url}: ${error.message}`);
         }
