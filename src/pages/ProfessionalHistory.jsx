@@ -46,8 +46,8 @@ function ProfessionalHistory() {
                     {sortedJobs.map((job, index) => {
                         const isEven = index % 2 === 0;
                         const contentClass = isEven
-                            ? "timeline-start mb-10 md:text-end mr-8"
-                            : "timeline-end mb-10 md:text-start ml-8";
+                            ? "timeline-start mb-10 md:text-end"
+                            : "timeline-end mb-10 md:text-start";
 
                         return (
                             <motion.li
@@ -59,7 +59,7 @@ function ProfessionalHistory() {
                                 viewport={{ once: true, amount: 0.5 }}
                                 variants={cardVariants}
                             >
-                                <div className="timeline-middle">
+                                <div className="timeline-middle mx-4">
                                     {/* Square container with a border */}
                                     <div className="p-1 border-2 border-primary">
                                         <img

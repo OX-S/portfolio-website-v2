@@ -9,9 +9,11 @@ import Footer from "./components/Footer";
 import background from "./assets/background.webp"
 
 function App() {
+
+
     return (
         <Router>
-            <div  className={"bg-base-200"}>
+            <div  >
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
