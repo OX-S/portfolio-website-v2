@@ -5,7 +5,7 @@ import ClassificationFlow from "../ClassificationFlow";
 const EarlyTraceSlide = () => {
     return (
         <div className="px-3">
-            <div className="bg-base-100 p-6 rounded-lg shadow-lg">
+            <div className="bg-base-100 p-6 my-6 rounded-xl shadow-xl">
                 <div className="flex flex-col md:flex-row md:justify-between items-start">
                     {/* Left Column */}
                     <div className="w-full md:w-1/2 pr-0 md:pr-4">

@@ -1,7 +1,7 @@
 // fetchGitHubData.js
 require('dotenv').config();
-import axios from 'axios';
-import fs from 'fs';
+const axios = require('axios');
+const fs = require('fs');
 
 const repoUrls = [
     'https://github.com/OX-S/react-pictionary-game',
@@ -46,6 +46,10 @@ async function fetchData() {
                 forks: data.forks_count,
                 language: data.language,
                 url: data.html_url,
+                updated_at: data.updated_at,
+                created_at: data.created_at,
+                size: data.size,
+                open_issues: data.open_issues_count
             });
 
             console.log(`Fetched data for ${owner}/${repo}`);
@@ -58,4 +62,13 @@ async function fetchData() {
     console.log('Data saved to repoData.json');
 }
 
-fetchData().then();
+if (require.main === module) {
+    fetchData()
+        .then(() => process.exit(0))
+        .catch(error => {
+            console.error('Script failed:', error);
+            process.exit(1);
+        });
+}
+
+module.exports = { fetchData };
