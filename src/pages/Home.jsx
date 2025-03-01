@@ -1,13 +1,10 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
 import headshot from "../assets/headshot.webp";
 import NET from 'vanta/dist/vanta.net.min';
-import useScript from '../hooks/useScript';
 import {ThemeContext} from "../context/ThemeContext";
-import LinkedInBadge from "../components/LinkedInBadge";
 
 
 const Home = () => {
-    // useScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js');
     const [vantaEffect, setVantaEffect] = useState(null)
     const vantaRef = useRef(null)
     const { theme } = useContext(ThemeContext);
