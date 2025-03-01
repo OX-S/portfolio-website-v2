@@ -94,7 +94,7 @@ function GitHubProjects() {
             transform: `scale(${scaleFactor})`,
             transformOrigin: 'top left',
             width: `${baseWidth}px`,
-            height: 'auto', // Or specific height if needed
+            height: 'auto',
             position: 'relative',
             margin: '0 auto',
             overflow: 'hidden'
