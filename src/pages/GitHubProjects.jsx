@@ -31,7 +31,7 @@ function GitHubProjects() {
     const slides = [
         <EarlyTraceSlide key={1} />,
         <MandelbrotSlide key={2} />,
-        <EarlyTraceSlide key={3} />,
+        // <EarlyTraceSlide key={3} />,
     ];
 
     useEffect(() => {
@@ -84,8 +84,6 @@ function GitHubProjects() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-
-
     return (
         <div style={{
             transform: `scale(${scaleFactor})`,
@@ -102,67 +100,76 @@ function GitHubProjects() {
                 position: 'relative'
             }}>
 
-            <div className="min-h-screen p-4 mx-auto w-3/4"
-            >
-                <GitHubProjectsHeading/>
-                <div className="relative mb-8 fade-edges" >
-                    <Slider {...settings}>
-                        {slides.map((slide, index) => (
+                <div className="min-h-screen p-4 mx-auto w-3/4"
+                >
+                    <GitHubProjectsHeading/>
+                    <div className="relative mb-8 fade-edges">
+                        <Slider {...settings}>
+                            {slides.map((slide, index) => (
+                                <div
+                                    key={index}
+                                    ref={el => slideRefs.current[index] = el}
+                                    className="transition-all duration-300"
+                                    style={{
+                                        minHeight: maxHeight > 0 ? `${maxHeight}px` : 'auto',
+                                        padding: '0.75rem'
+                                    }}
+                                >
+                                    {React.cloneElement(slide, {
+                                        className: `${slide.props.className || ''} h-full`
+                                    })}
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                    <div className="inline-block">
+                        <h1 className="text-3xl sm:text-6xl font-extrabold text-left drop-shadow-2xl">
+                            <span className="block mt-2 text-3xl sm:text-6xl font-light">
+                                All Projects
+                            </span>
+                        </h1>
+                        <hr className="mt-6 border-t-4 border w-full mb-16"/>
+                    </div>
+
+                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        {repoProjects.map((project, index) => (
                             <div
                                 key={index}
-                                ref={el => slideRefs.current[index] = el}
-                                className="transition-all duration-300"
-                                style={{
-                                    minHeight: maxHeight > 0 ? `${maxHeight}px` : 'auto',
-                                    padding: '0.75rem'
-                                }}
+                                className="card bg-base-100 shadow-xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
                             >
-                                {React.cloneElement(slide, {
-                                    className: `${slide.props.className || ''} h-full`
-                                })}
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
-                <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {repoProjects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="card bg-base-100 shadow-xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
-                        >
-                            <div className="card-body flex flex-col">
-                                <h3 className="card-title text-2xl font-semibold">
-                                    <a
-                                        href={project.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="hover:underline"
-                                    >
-                                        {project.name}
-                                    </a>
-                                </h3>
-                                <p className="flex-grow mt-2 light:text-gray-600 dark:text-gray-400">{project.description}</p>
-                                <div className="mt-4 flex items-center justify-between">
-                                    <div className="flex space-x-4">
-                                        <div className="flex items-center space-x-1">
-                                            <GitStar className="h-5 w-5 stoke-current"/>
-                                            <span>{project.stars}</span>
+                                <div className="card-body flex flex-col">
+                                    <h3 className="card-title text-2xl font-semibold">
+                                        <a
+                                            href={project.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:underline"
+                                        >
+                                            {project.name}
+                                        </a>
+                                    </h3>
+                                    <p className="flex-grow mt-2 light:text-gray-600 dark:text-gray-400">{project.description}</p>
+                                    <div className="mt-4 flex items-center justify-between">
+                                        <div className="flex space-x-4">
+                                            <div className="flex items-center space-x-1">
+                                                <GitStar className="h-5 w-5 stoke-current"/>
+                                                <span>{project.stars}</span>
+                                            </div>
+                                            <div className="flex items-center space-x-1">
+                                                <GitFork className="h-5 w-5 fill-current"/>
+                                                <span>{project.forks}</span>
+                                            </div>
                                         </div>
                                         <div className="flex items-center space-x-1">
-                                            <GitFork className="h-5 w-5 fill-current"/>
-                                            <span>{project.forks}</span>
+                                            <GitCode className="h-5 w-5 fill-current"/>
+                                            <span>{project.primary_language}</span>
                                         </div>
-                                    </div>
-                                    <div className="flex items-center space-x-1">
-                                        <GitCode className="h-5 w-5 fill-current"/>
-                                        <span>{project.primary_language}</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     );

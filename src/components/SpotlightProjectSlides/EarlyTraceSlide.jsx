@@ -4,17 +4,15 @@ import ClassificationFlow from "../ClassificationFlow";
 
 const EarlyTraceSlide = () => {
     return (
-        <div className="px-3">
-            <div className="bg-base-100 p-6 my-6 rounded-xl shadow-xl">
+        <div className="px-3" style={{ height: '470px' }}>
+            <div className="bg-base-100 p-6 my-6 rounded-xl shadow-xl h-full">
                 <div className="flex flex-col md:flex-row md:justify-between items-start">
-                    {/* Left Column */}
                     <div className="w-full md:w-1/2 pr-0 md:pr-4">
                         <div className="flex items-center mb-2">
-                            <Trophy className="w-8 h-8 mr-1 "
-                                    style={{stroke: 'gold'}}/>
+                            <Trophy className="w-8 h-8 mr-1" style={{ stroke: 'gold' }}/>
                             <span className="font-bold text-xl">
                                 Runner-Up at Spring 2025 Rutgers Hackathon
-                              </span>
+                            </span>
                         </div>
                         <div className="text-left">
                             <h2 className="text-6xl font-bold mb-2 sm:mb-3">
@@ -24,18 +22,13 @@ const EarlyTraceSlide = () => {
                                 AI agent that can predict dementia in text samples.
                             </p>
                             <p className="text-xs sm:text-sm md:text-base lg:text-md mb-2 sm:mb-3 text-gray-600 dark:text-gray-400">
-                                Inspired by a 2023 study, we developed an AI model that analyzes personal writings to
-                                detect dementia.
-                                By collecting 1.4 million tokens from blogs of individuals with and without dementia, we
-                                trained the model using the
+                                Inspired by a 2023 study, we developed an AI model that analyzes personal writings to detect dementia.
+                                By collecting 1.4 million tokens from blogs of individuals with and without dementia, we trained the model using the
                                 BGE-large-en-v1.5 transformer for sentence embeddings and XGBoost for classification.
-                                The model achieved an F1 score
-                                of 0.95 in detecting dementia-related text patterns.
+                                The model achieved an F1 score of 0.95 in detecting dementia-related text patterns.
                             </p>
                         </div>
-
-
-                        <div className="mt-8 text-center ">
+                        <div className="mt-8 text-center">
                             <a
                                 href="https://github.com/OX-S/early-trace"
                                 target="_blank"
@@ -51,13 +44,10 @@ const EarlyTraceSlide = () => {
                             </a>
                         </div>
                     </div>
-
                     <div className="hidden md:flex md:w-2/6 justify-center items-center my-6 md:my-0">
                         <ClassificationFlow className={"self-center"}/>
                     </div>
-
-                    <div
-                        className="hidden md:flex md:w-1/6 pl-2 mr-2 flex-shrink-0 min-w-[200px] justify-center items-center self-center">
+                    <div className="hidden md:flex md:w-1/6 pl-2 mr-2 flex-shrink-0 min-w-[200px] justify-center items-center self-center">
                         <div className="stats stats-vertical">
                             <div className="stat">
                                 <div className="stat-title">Posts Used</div>

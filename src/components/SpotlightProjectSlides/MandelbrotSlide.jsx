@@ -6,7 +6,7 @@ import { BlockMath, InlineMath } from 'react-katex';
 const MandelbrotSlide = () => {
     return (
         <div className="px-3">
-            <div className="bg-base-100 p-6 my-6 rounded-lg shadow-xl relative">
+            <div className="bg-base-100 p-6 my-6 rounded-lg shadow-xl relative " style={{ height: '470px' }}>
                 <div className="flex flex-row justify-between items-stretch">
                     <div className="w-3/4 pr-4">
                         <div className="text-left">
