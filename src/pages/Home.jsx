@@ -3,7 +3,7 @@ import NET from 'vanta/dist/vanta.net.min';
 import {ThemeContext} from "../context/ThemeContext";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { SiPython, SiTensorflow, SiScikitlearn, SiTableau, SiReact } from "react-icons/si";
-import headshotImage from '../assets/headshot.jpg';
+import headshotImage from '../assets/headshot.webp';
 import siteContent from "../content/siteContent";
 
 const Home = () => {
