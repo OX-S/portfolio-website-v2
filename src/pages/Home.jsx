@@ -84,7 +84,7 @@ const Home = () => {
                                     <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                                         <button
                                             className="flex items-center btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
-                                            onClick={() => window.open('/resume.pdf', '_blank')}
+                                            onClick={() => window.open('Finn_Kliewer_Resume.pdf', '_blank')}
                                             aria-label="Download Resume">
                                             <FaDownload className="mr-2"/>Download Resume
                                         </button>
