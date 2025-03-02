@@ -2,19 +2,18 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import jobs from "../content/jobs"; // Centralized jobs data
+import jobs from "../content/jobs";
 import placeholderLogo from "../assets/placeholder.png";
-import ProfessionalHistoryHeading from "../components/headers/ProfessionalHistoryHeading"; // Fallback logo
+import ProfessionalHistoryHeading from "../components/headers/ProfessionalHistoryHeading";
 
 function ProfessionalHistory() {
-    // Sort jobs descending by start date (MM/YYYY format)
     const sortedJobs = jobs.sort((a, b) => {
         const [aMonth, aYear] = a.startDate.split("/").map(Number);
         const [bMonth, bYear] = b.startDate.split("/").map(Number);
         return bYear - aYear || bMonth - aMonth;
     });
 
-    const initialVisibleCount = 2; // adjust as needed
+    const initialVisibleCount = 2;
 
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.8 },
@@ -40,7 +39,6 @@ function ProfessionalHistory() {
             </Helmet>
 
             <div className="min-h-screen p-4 max-w-[75%] mx-auto">
-                {/*<h2 className="text-3xl font-bold mb-6">Professional History</h2>*/}
                 <ProfessionalHistoryHeading />
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {sortedJobs.map((job, index) => {
@@ -60,7 +58,6 @@ function ProfessionalHistory() {
                                 variants={cardVariants}
                             >
                                 <div className="timeline-middle mx-4">
-                                    {/* Square container with a border */}
                                     <div className="p-1 border-2 border-primary">
                                         <img
                                             src={job.logo || placeholderLogo}

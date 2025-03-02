@@ -53,7 +53,7 @@ const Home = () => {
                         I'm a software developer and entrepreneur working in venture capital on the side.
                     </p>
                     <a
-                        href={`${process.env.PUBLIC_URL}/assets/resume.pdf`} // Ensure the path is correct
+                        href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"

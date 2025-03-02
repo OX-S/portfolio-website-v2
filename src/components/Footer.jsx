@@ -1,6 +1,5 @@
 // src/components/Footer.js
 import React from "react";
-
 import siteContent from "../content/siteContent";
 import { ReactComponent as EmailIcon} from "../assets/icons/email.svg";
 import { ReactComponent as PhoneIcon} from "../assets/icons/phone-call.svg";
@@ -49,7 +48,6 @@ function Footer() {
                         </a>
                     </div>
 
-                    {/* Copyright */}
                     <div className="text-sm text-gray-400">
                         &copy; {new Date().getFullYear()} Finn Kliewer. All rights reserved.
                     </div>

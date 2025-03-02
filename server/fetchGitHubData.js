@@ -4,11 +4,12 @@ const axios = require('axios');
 const fs = require('fs');
 
 const repoUrls = [
-    'https://github.com/OX-S/react-pictionary-game',
-    'https://github.com/ArcticDevelopment/ArcticTools',
+    'https://github.com/OX-S/early-trace',
     'https://github.com/OX-S/pyopengl-mandelbrot',
+    'https://github.com/OX-S/react-pictionary-game',
+    'https://github.com/OX-S/portfolio-website-v2',
+    'https://github.com/ArcticDevelopment/ArcticTools',
     'https://github.com/OX-S/ShoppingList',
-    'https://github.com/OX-S/Portfolio-Website'
 ];
 
 function parseRepoUrl(url) {

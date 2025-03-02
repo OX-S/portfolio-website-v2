@@ -7,7 +7,7 @@ let repoData = [];
 const updateData = async () => {
     try {
         await fetchData();
-        repoData = require('./public/repoData.json');
+        repoData = require('./repoData.json');
         console.log('GitHub data updated successfully');
     } catch (error) {
         console.error('Error updating GitHub data:', error);

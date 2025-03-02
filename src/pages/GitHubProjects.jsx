@@ -69,19 +69,16 @@ function GitHubProjects() {
     };
 
     const [scaleFactor, setScaleFactor] = useState(1);
-    const baseWidth = 1920; // Reference width
+    const baseWidth = 1920;
 
     useEffect(() => {
         const handleResize = () => {
             const currentWidth = window.innerWidth;
-            const scale = Math.min(currentWidth / baseWidth, 1); // Never scale beyond 100%
+            const scale = Math.min(currentWidth / baseWidth, 1);
             setScaleFactor(scale);
         };
-
-        // Initial calculation
         handleResize();
 
-        // Add resize listener
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
@@ -117,7 +114,7 @@ function GitHubProjects() {
                                 className="transition-all duration-300"
                                 style={{
                                     minHeight: maxHeight > 0 ? `${maxHeight}px` : 'auto',
-                                    padding: '0.75rem' // Match your px-3 class
+                                    padding: '0.75rem'
                                 }}
                             >
                                 {React.cloneElement(slide, {
@@ -127,7 +124,6 @@ function GitHubProjects() {
                         ))}
                     </Slider>
                 </div>
-                {/* All Projects Grid */}
                 <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {repoProjects.map((project, index) => (
                         <div
@@ -159,7 +155,7 @@ function GitHubProjects() {
                                     </div>
                                     <div className="flex items-center space-x-1">
                                         <GitCode className="h-5 w-5 fill-current"/>
-                                        <span>{project.language}</span>
+                                        <span>{project.primary_language}</span>
                                     </div>
                                 </div>
                             </div>
