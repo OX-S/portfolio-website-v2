@@ -13,7 +13,10 @@ function GitHubProjects() {
     const [repoProjects, setRepoProjects] = useState([]);
 
     useEffect(() => {
-        fetch('/api/repos')
+        const baseUrl = process.env.REACT_APP_API_URL
+            ? process.env.REACT_APP_API_URL.replace(/\/$/, "") // Remove trailing slash if present
+            : "";
+        fetch(`${baseUrl}/api/repos`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -23,6 +26,7 @@ function GitHubProjects() {
             .then((data) => setRepoProjects(data))
             .catch((error) => console.error('Error fetching repo data:', error));
     }, []);
+
 
     const slideRefs = useRef([]);
     const [maxHeight, setMaxHeight] = useState(0);
