@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {FaDownload} from "react-icons/fa";
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React from 'react';
 import {ReactComponent as Astronaut } from "../assets/icons/astronaut.svg";
 
 
