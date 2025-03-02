@@ -7,6 +7,7 @@ import GitHubProjects from "./pages/GitHubProjects";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import background from "./assets/background.webp"
+import NotFound from "./pages/404NotFound";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/professional-history" element={<ProfessionalHistory />} />
                     <Route path="/github-projects" element={<GitHubProjects />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
             </div>
