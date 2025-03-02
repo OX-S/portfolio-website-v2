@@ -2,6 +2,9 @@
 import {lazyWithPreload} from "../utils/lazyWithPreload";
 
 const siteContent = {
+    name: "Finn Kliewer",
+    gitHubLink: "https://github.com/OX-S",
+    linkedinLink: "https://www.linkedin.com/in/finnkliewer/",
     home: {
         heading: "Hello, I'm Finn",
         subheading:

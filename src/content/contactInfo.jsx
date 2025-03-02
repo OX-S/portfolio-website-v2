@@ -21,7 +21,7 @@ const contactInfo = [
     },
     {
         id: 3,
-        href: "https://www.linkedin.com/in/finn-kliewer-82346a227/",
+        href: "https://www.linkedin.com/in/finnkliewer/",
         icon: <FaLinkedin size={24} />,
         label: "LinkedIn",
         title: "LinkedIn Profile",

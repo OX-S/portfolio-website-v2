@@ -1,13 +1,28 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import headshot from "../assets/headshot.webp";
 import NET from 'vanta/dist/vanta.net.min';
 import {ThemeContext} from "../context/ThemeContext";
-
+import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import { SiPython, SiTensorflow, SiScikitlearn, SiTableau, SiReact } from "react-icons/si";
+import headshotImage from '../assets/headshot.jpg';
+import siteContent from "../content/siteContent";
 
 const Home = () => {
+    const [isVisible, setIsVisible] = useState(false);
     const [vantaEffect, setVantaEffect] = useState(null)
     const vantaRef = useRef(null)
     const { theme } = useContext(ThemeContext);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
+    const skills = [
+        { icon: <SiPython />, name: "Python" },
+        { icon: <SiTensorflow />, name: "TensorFlow" },
+        { icon: <SiScikitlearn />, name: "Scikit-learn" },
+        { icon: <SiTableau />, name: "Tableau" },
+        { icon: <SiReact />, name: "ReactJS" }
+    ];
 
     useEffect(() => {
         const backgroundColor = theme === 'light' ? 0xe8e8e8 : 0x1f2937;
@@ -38,35 +53,86 @@ const Home = () => {
         };
     }, [theme]);
 
-
     return (
-        <div className="vanta-container" ref={vantaRef} style={{ height: '100vh', width: '100%' }}>
-            <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen px-4">
-                <div className="avatar">
-                    <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={headshot} alt="Headshot" />
+        <div className="vanta-container " ref={vantaRef} style={{height: '100vh', width: '100%'}}>
+            <div className={"backdrop-blur-sm h-[100%] w-[100%]"}>
+                <div className="container mx-auto px-4 py-16 ">
+                    <div
+                        className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+
+
+                        <div className="container mx-auto px-4 py-16">
+                            <div className="flex flex-col lg:flex-row items-center justify-end gap-12">
+                                <div className="flex-shrink-0">
+                                    <div
+                                        className="w-64 h-64 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 p-1 shadow-2xl">
+                                        <img
+                                            src={headshotImage}
+                                            alt="Profile Picture"
+                                            className="w-full h-full rounded-full"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="text-center lg:text-left w-1/2">
+                                    <h1 className="text-4xl md:text-5xl font-bold mb-4">{siteContent.name}</h1>
+                                    <h2 className="text-2xl md:text-3xl mb-6">Data Scientist & ML Engineer</h2>
+                                    <p className="text-lg mb-8">
+                                        Passionate about transforming complex data into actionable insights. Specializing in
+                                        machine learning, statistical analysis, and predictive modeling.
+                                    </p>
+                                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                                        <button
+                                            className="flex items-center btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
+                                            onClick={() => window.open('/resume.pdf', '_blank')}
+                                            aria-label="Download Resume">
+                                            <FaDownload className="mr-2"/>Download Resume
+                                        </button>
+                                        <a
+                                            href={siteContent.gitHubLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-primary border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
+                                            aria-label="GitHub Profile">
+                                            <FaGithub size={24}/>
+                                        </a>
+                                        <a
+                                            href={siteContent.linkedinLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-primary border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
+                                            aria-label="LinkedIn Profile">
+                                            <FaLinkedin size={24}/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className="backdrop-blur-lg bg-black/10 dark:bg-white/10 rounded-xl p-8 my-16 w-3/4 mx-auto">
+                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                                Technical Skills
+                            </h3>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                                {skills.map((skill, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex flex-col items-center p-4 bg-white/80 dark:bg-white/5 rounded-lg hover:bg-gray-200 dark:hover:bg-white/20 transition-colors duration-300"
+                                    >
+                                        <div className="text-3xl mb-2 text-gray-900 dark:text-white">
+                                            {skill.icon}
+                                        </div>
+                                        <span className="text-gray-900 dark:text-white">{skill.name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="mt-6 lg:mt-0 lg:ml-10 text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Hello, I'm Finn Kliewer</h1>
-                    <p className="py-6">
-                        I'm a software developer and entrepreneur working in venture capital on the side.
-                    </p>
-                    <a
-                        href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
-                    >
-                        Download Resume
-                    </a>
-
-                </div>
-
             </div>
-
         </div>
-    );
+    )
 };
 
 export default Home;
