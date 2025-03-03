@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import NET from 'vanta/dist/vanta.net.min';
 import { ThemeContext } from "../context/ThemeContext";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
-import { SiPython, SiTensorflow, SiScikitlearn, SiTableau, SiReact } from "react-icons/si";
+import {SiPython, SiTensorflow, SiScikitlearn, SiTableau, SiReact, SiR, SiSqlite} from "react-icons/si";
 import headshotImage from '../assets/headshot.webp';
 import siteContent from "../content/siteContent";
 
@@ -21,7 +21,8 @@ const Home = () => {
         { icon: <SiTensorflow />, name: "TensorFlow" },
         { icon: <SiScikitlearn />, name: "Scikit-learn" },
         { icon: <SiTableau />, name: "Tableau" },
-        { icon: <SiReact />, name: "ReactJS" }
+        { icon: <SiReact />, name: "ReactJS" },
+        { icon: <SiSqlite />, name: "SQL" }
     ];
 
     useEffect(() => {
@@ -108,11 +109,11 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="backdrop-blur-lg bg-black/10 dark:bg-white/10 rounded-xl p-8 my-16 w-full lg:w-3/4 mx-auto">
+                        <div className="backdrop-blur-lg bg-black/10 dark:bg-white/10 rounded-xl p-8 my-16 w-full lg:w-4/5 mx-auto">
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
                                 Technical Skills
                             </h3>
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
                                 {skills.map((skill, index) => (
                                     <div
                                         key={index}
