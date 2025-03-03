@@ -77,7 +77,6 @@ const Home = () => {
                                     Passionate about transforming complex data into actionable insights. Specializing in
                                     machine learning, statistical analysis, and predictive modeling.
                                 </p>
-                                {/* Button Section */}
                                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                                     <button
                                         className="flex items-center btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300 w-full md:w-auto"
@@ -105,7 +104,6 @@ const Home = () => {
                                         <FaLinkedin size={24} />
                                     </a>
                                 </div>
-                                {/* End Button Section */}
                             </div>
                         </div>
 

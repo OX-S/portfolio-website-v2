@@ -1,22 +1,19 @@
-// src/components/Footer.js
 import React from "react";
 import siteContent from "../content/siteContent";
-import { ReactComponent as EmailIcon} from "../assets/icons/email.svg";
-import { ReactComponent as PhoneIcon} from "../assets/icons/phone-call.svg";
-
+import { ReactComponent as EmailIcon } from "../assets/icons/email.svg";
+import { ReactComponent as PhoneIcon } from "../assets/icons/phone-call.svg";
 
 function Footer() {
     return (
         <footer className="bg-base-300">
             <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                     <div className="mb-6 md:mb-0">
-                            <h2 className="text-2xl font-bold">{siteContent.navbar.brand}</h2>
+                        <h2 className="text-2xl font-bold">{siteContent.navbar.brand}</h2>
                     </div>
-
-                    <div className="flex space-x-6">
+                    <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 hide-below-460">
                         {siteContent.navbar.links.map((link) => (
-                                    <a
+                            <a
                                 key={link.name}
                                 href={link.path}
                                 className="hover:text-white transition-colors duration-300"
@@ -28,14 +25,14 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center">
-                    <div className="flex space-x-4 mb-4 md:mb-0">
+                <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 mb-4 md:mb-0">
                         <a
                             href="mailto:finn.kliewer@gmail.com"
                             className="hover:text-white transition-colors duration-300 flex items-center"
                             aria-label="Email"
                         >
-                            <EmailIcon className={"h-6 w-6 mr-2"} />
+                            <EmailIcon className="h-6 w-6 mr-2" />
                             finn.kliewer@gmail.com
                         </a>
                         <a
@@ -43,7 +40,7 @@ function Footer() {
                             className="hover:text-white transition-colors duration-300 flex items-center"
                             aria-label="Phone"
                         >
-                            <PhoneIcon className={'mr-2 h-6 w-6 '}/>
+                            <PhoneIcon className="mr-2 h-6 w-6" />
                             +1 (201) 747-2660
                         </a>
                     </div>
