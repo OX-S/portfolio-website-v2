@@ -24,13 +24,11 @@ function Navbar() {
 
     return (
         <div className="navbar bg-base-100 px-4 relative">
-            {/* Desktop Brand */}
             <div className="absolute top-0 left-0 mt-4 ml-4 hidden lg:block">
                 <span className="text-lg font-semibold">{brand}</span>
             </div>
 
-            {/* Mobile Hamburger Menu */}
-            <div className="absolute top-0 left-0 mt-4 ml-4 lg:hidden">
+            <div className="absolute inset-y-0 left-0 flex items-center ml-4 lg:hidden">
                 <label
                     tabIndex="0"
                     className="btn btn-ghost swap swap-rotate"
@@ -41,7 +39,6 @@ function Navbar() {
                         onChange={() => setMobileMenuOpen(!isMobileMenuOpen)}
                         className="hidden"
                     />
-                    {/* Hamburger Icon */}
                     <svg
                         className="swap-off h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +47,6 @@ function Navbar() {
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    {/* Close Icon */}
                     <svg
                         className="swap-on h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +58,6 @@ function Navbar() {
                 </label>
             </div>
 
-            {/* Centered Links (Desktop) */}
             <div className="flex flex-1 justify-center items-center">
                 <div className="hidden lg:flex space-x-4">
                     {links.map((link, index) => (
@@ -78,7 +73,6 @@ function Navbar() {
                 </div>
             </div>
 
-            {/* Theme Toggle (Right Side) */}
             <div className="absolute top-0 right-0 mt-4 mr-4">
                 <label className="grid cursor-pointer place-items-center">
                     <input
@@ -93,7 +87,6 @@ function Navbar() {
                 </label>
             </div>
 
-            {/* Mobile Dropdown Menu */}
             {isMobileMenuOpen && (
                 <div className="absolute left-0 top-full w-52 mt-2 bg-base-100 shadow rounded-box z-50 lg:hidden">
                     <ul className="menu p-2">
