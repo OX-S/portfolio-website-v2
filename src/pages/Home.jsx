@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import NET from 'vanta/dist/vanta.net.min';
-import {ThemeContext} from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { SiPython, SiTensorflow, SiScikitlearn, SiTableau, SiReact } from "react-icons/si";
 import headshotImage from '../assets/headshot.webp';
@@ -76,30 +76,35 @@ const Home = () => {
                                     Passionate about transforming complex data into actionable insights. Specializing in
                                     machine learning, statistical analysis, and predictive modeling.
                                 </p>
+                                {/* Button Section */}
                                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                                     <button
-                                        className="flex items-center btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
+                                        className="flex items-center btn btn-primary btn-wide border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300 w-full md:w-auto"
                                         onClick={() => window.open('Finn_Kliewer_Resume.pdf', '_blank')}
-                                        aria-label="Download Resume">
-                                        <FaDownload className="mr-2"/>Download Resume
+                                        aria-label="Download Resume"
+                                    >
+                                        <FaDownload className="mr-2" />Download Resume
                                     </button>
                                     <a
                                         href={siteContent.gitHubLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="btn btn-primary border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
-                                        aria-label="GitHub Profile">
-                                        <FaGithub size={24}/>
+                                        className="btn btn-primary border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300 w-[calc(50%-0.5rem)] md:w-auto"
+                                        aria-label="GitHub Profile"
+                                    >
+                                        <FaGithub size={24} />
                                     </a>
                                     <a
                                         href={siteContent.linkedinLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="btn btn-primary border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300"
-                                        aria-label="LinkedIn Profile">
-                                        <FaLinkedin size={24}/>
+                                        className="btn btn-primary border-2 border-primary hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300 w-[calc(50%-0.5rem)] md:w-auto"
+                                        aria-label="LinkedIn Profile"
+                                    >
+                                        <FaLinkedin size={24} />
                                     </a>
                                 </div>
+                                {/* End Button Section */}
                             </div>
                         </div>
 
