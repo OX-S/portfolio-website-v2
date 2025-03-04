@@ -6,7 +6,7 @@ const GitHubProjectsHeading = () => {
 
     <div className="flex items-start justify-start mt-6">
         <div className="inline-block">
-            <h1 className="text-3xl sm:text-6xl font-extrabold text-left drop-shadow-2xl">
+            <h1 className="text-3xl md:text-6xl font-extrabold text-left drop-shadow-2xl">
                 <span className="block font-extrabold drop-shadow-2xl">
                     Writing{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-shimmer">
@@ -14,7 +14,7 @@ const GitHubProjectsHeading = () => {
                     </span>
                     ,
                 </span>
-                <span className="block mt-2 text-3xl sm:text-6xl font-light">
+                <span className="block mt-2 text-3xl md:text-6xl font-light">
                     Breaking Boundaries
                 </span>
             </h1>

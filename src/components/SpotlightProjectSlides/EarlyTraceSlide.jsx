@@ -6,8 +6,8 @@ const EarlyTraceSlide = () => {
     return (
         <div className="px-3" style={{ height: '470px' }}>
             <div className="bg-base-100 p-6 my-6 rounded-xl shadow-xl h-full">
-                <div className="flex flex-col md:flex-row md:justify-between items-start">
-                    <div className="w-full md:w-1/2 pr-0 md:pr-4">
+                <div className="flex flex-row justify-between items-start">
+                    <div className="w-1/2 pr-0 md:pr-4">
                         <div className="flex items-center mb-2">
                             <Trophy className="w-8 h-8 mr-1" style={{ stroke: 'gold' }}/>
                             <span className="font-bold text-xl">
@@ -44,10 +44,10 @@ const EarlyTraceSlide = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="hidden md:flex md:w-2/6 justify-center items-center my-6 md:my-0">
+                    <div className="flex w-2/6 justify-center items-center my-6 md:my-0">
                         <ClassificationFlow className={"self-center"}/>
                     </div>
-                    <div className="hidden md:flex md:w-1/6 pl-2 mr-2 flex-shrink-0 min-w-[200px] justify-center items-center self-center">
+                    <div className="flex w-1/6 pl-2 mr-2 flex-shrink-0 min-w-[200px] justify-center items-center self-center">
                         <div className="stats stats-vertical">
                             <div className="stat">
                                 <div className="stat-title">Posts Used</div>
