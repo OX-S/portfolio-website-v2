@@ -81,21 +81,12 @@ function Contact() {
             <Helmet>
                 <title>Contact Me - Finn Kliewer</title>
                 <meta
-                    name="description"
+                    name="Contact Me - Finn Kliewer"
                     content="Get in touch with me through my contact form or reach out via email, phone, LinkedIn, or GitHub."
                 />
                 <meta property="og:title" content="Contact Me - Finn Kliewer" />
-                <meta
-                    property="og:description"
-                    content="Reach out to me through my contact form or connect with me on LinkedIn and GitHub."
-                />
-                <meta property="og:type" content="website" />
-
             </Helmet>
-
-
             <ContactHeading />
-
             <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-base-100 shadow-md rounded-lg overflow-hidden">
                 <div className="lg:w-1/2 bg-primary text-white p-8 flex flex-col justify-center">
                     <h2 className="mb-6 text-3xl font-bold text-center">Get in Touch</h2>

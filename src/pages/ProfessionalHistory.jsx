@@ -33,8 +33,8 @@ function ProfessionalHistory() {
             <Helmet>
                 <title>Professional History - Finn Kliewer</title>
                 <meta
-                    name="description"
-                    content="Explore the professional journey of Finn Kliewer, including roles as a Software Developer, Entrepreneur, and VC Analyst."
+                    name="Professional History - Finn Kliewer"
+                    content="Building the future, one line of code at a time."
                 />
             </Helmet>
 

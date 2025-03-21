@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import GitHubProjectsHeading from "../components/headers/GitHubProjectsHeading";
 import EarlyTraceSlide from "../components/SpotlightProjectSlides/EarlyTraceSlide";
 import MandelbrotSlide from "../components/SpotlightProjectSlides/MandelbrotSlide";
+import {Helmet} from "react-helmet";
 
 function GitHubProjects() {
     const [repoProjects, setRepoProjects] = useState([]);
@@ -83,11 +84,18 @@ function GitHubProjects() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Use the computed maxHeight (from ResizeObserver) as the base slider height.
-    const effectiveSlideHeight = maxHeight; // already includes any padding adjustments
+    const effectiveSlideHeight = maxHeight;
 
     return (
         <React.Fragment>
+            <Helmet>
+                <title>GitHub Projects - Finn Kliewer</title>
+                <meta
+                    name="GitHub Projects - Finn Kliewer"
+                    content="Writing code, breaking boundaries."
+                />
+            </Helmet>
+
             <div className="p-4 mx-auto w-3/4">
                 <GitHubProjectsHeading />
             </div>
