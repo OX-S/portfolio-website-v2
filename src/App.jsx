@@ -20,6 +20,7 @@ function App() {
                     <Route path="/professional-history" element={<ProfessionalHistory />} />
                     <Route path="/github-projects" element={<GitHubProjects />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
