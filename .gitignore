@@ -24,3 +24,4 @@ yarn-error.log*
 /.env
 /public/repoData.json
 /server/repoData.json
+/server/src/repoData.json
